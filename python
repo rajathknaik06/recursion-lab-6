@@ -1,0 +1,28 @@
+""" You are tasked with developing a digital electronics simulation tool that necessitates the conversion of decimal numbers to binary representation for various computations. As part of this tool, you are required to implement a recursive function to perform the conversion efficiently.
+
+
+
+Your objective is to implement a recursive function called decimal_to_binary that converts a given decimal number to its binary equivalent. The function should return the binary representation as a string.
+
+Input format :
+The input consists of a single integer n, representing the decimal number to be converted.
+
+Output format :
+The output consists of a string representing the binary equivalent of the input decimal number.
+
+
+"""
+
+
+def decimal_to_binary(n):
+    if n == 0:
+        return '0'
+    elif n == 1:
+        return '1'
+    else:
+        return decimal_to_binary(n // 2) + str(n % 2)
+
+if __name__ == "__main__":
+    decimal_input = int(input())
+    binary_output = decimal_to_binary(decimal_input)
+    print(binary_output)
